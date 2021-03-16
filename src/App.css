@@ -10,3 +10,7 @@ h1 {
     color: white;
     font-weight: 200;
 }
+
+.header-section {
+    height: 20vh;
+}

@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import "./App.css";
 import CardList from "./CardList";
 import SearchBox from "./SearchBox";
+import Scroll from "./Scroll";
 
 class App extends Component {
     state = {
@@ -24,9 +25,13 @@ class App extends Component {
         const filteredRobots = robots.filter(robot => robot.name.toLowerCase().includes(searchInput));
         return (
             <div>
+                <div className="header-section">
                 <h1 className="tc f1">RoboFriends</h1>
                 <SearchBox searchInput={searchInput} handleInput={this.handleInput}/>
-                <CardList robots={filteredRobots}/>
+                </div>
+                <Scroll>
+                    <CardList robots={filteredRobots}/>
+                </Scroll>
             </div>
         )
     }
