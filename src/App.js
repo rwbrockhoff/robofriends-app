@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import "./App.css";
 import {robots} from "./robots";
 import CardList from "./CardList";
 import SearchBox from "./SearchBox";
@@ -18,7 +19,7 @@ class App extends Component {
         const filteredRobots = robots.filter(robot => robot.name.toLowerCase().includes(searchInput))
         return (
             <div>
-                <h1 className="tc">RoboFriends</h1>
+                <h1 className="tc f1">RoboFriends</h1>
                 <SearchBox searchInput={searchInput} handleInput={this.handleInput}/>
                 <CardList robots={filteredRobots}/>
             </div>
