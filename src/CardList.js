@@ -1,13 +1,14 @@
 import React from "react";
-import {robots} from "./robots";
 import Card from "./Card";
 
-const CardList = () => {
+const CardList = ({robots, robotFilter}) => {
     return (
         <div className="tc">
-            {robots.map((robot, id = robot.id) => {
+            {robots
+            .filter(robot => robot.name.toLowerCase().includes(robotFilter))
+            .map((robot, id = robot.id) => {
                 return (
-                    <Card robot={robot} id={id}/>
+                    <Card robot={robot} key={id}/>
                 )
             })}
         </div>
