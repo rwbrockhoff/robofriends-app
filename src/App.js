@@ -1,15 +1,13 @@
 import React from "react";
-import {robots} from "./robots";
-import Card from "./Card";
+import CardList from "./CardList";
+import SearchBox from "./SearchBox";
 
 const App = () => {
     return (
         <div>
-            {robots.map((robot, id = robot.id) => {
-                return (
-                    <Card robot={robot} id={id}/>
-                )
-            })}
+            <h1 className="tc">RoboFriends</h1>
+            <SearchBox/>
+            <CardList/>
         </div>
     )
 }
