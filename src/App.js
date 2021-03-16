@@ -9,16 +9,18 @@ class App extends Component {
         searchInput: ""
     }
 
-    handleInput = (e) => {
-        this.setState({searchInput: e.target.value})
+    handleInput = (event) => {
+        this.setState({searchInput: event.target.value})
     }
 
     render(){
+        const {robots, searchInput} = this.state;
+        const filteredRobots = robots.filter(robot => robot.name.toLowerCase().includes(searchInput))
         return (
             <div>
                 <h1 className="tc">RoboFriends</h1>
-                <SearchBox searchInput={this.state.searchInput} handleInput={this.handleInput}/>
-                <CardList robots={this.state.robots} robotFilter={this.state.searchInput}/>
+                <SearchBox searchInput={searchInput} handleInput={this.handleInput}/>
+                <CardList robots={filteredRobots}/>
             </div>
         )
     }
